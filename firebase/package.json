@@ -1,0 +1,14 @@
+{
+  "name": "techstore-firebase-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "node seed.js",
+    "seed:emulator": "USE_FIREBASE_EMULATOR=true node seed.js",
+    "set-admin": "node set-admin.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}
