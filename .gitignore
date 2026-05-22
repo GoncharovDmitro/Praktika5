@@ -1,0 +1,26 @@
+# Node
+node_modules/
+npm-debug.log*
+.npm
+
+# Build outputs
+frontend/dist/
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+firebase/serviceAccount.json
+firebase/*-service-account.json
+firebase/.firebaserc.local
+
+# Firebase
+firebase/.firebase/
+firebase/firebase-debug.log
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+*.swp
