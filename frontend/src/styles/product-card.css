@@ -1,0 +1,139 @@
+/* ============================================================
+   Product Card
+   ============================================================ */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+/* Посилання-обгортка для зображення і тексту */
+.product-card > a.product-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+}
+.product-card > a.product-link:hover { color: inherit; }
+
+/* Зображення */
+.product-image {
+  aspect-ratio: 1 / 1;
+  background: var(--surface-2);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-image img { transform: scale(1.04); }
+
+/* Бейдж "Немає" */
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.badge--out { background: var(--danger); color: #fff; }
+
+/* Блок інформації */
+.product-info {
+  padding: 0.9rem 1rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+/* Назва — два рядки max */
+.product-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.55em;
+}
+.product-card:hover .product-name { color: var(--accent); }
+
+/* Короткий опис */
+.product-description {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Ціна */
+.product-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+/* Кнопка "У кошик" */
+.btn-add-to-cart {
+  margin: 0;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0;
+  border-top: 1px solid var(--border);
+  transition: background 0.15s, transform 0.1s;
+  flex-shrink: 0;
+}
+.btn-add-to-cart:hover:not(:disabled) { background: var(--accent-hover); }
+.btn-add-to-cart:active:not(:disabled) { transform: translateY(1px); }
+.btn-add-to-cart:disabled {
+  background: var(--surface-2);
+  color: var(--text-soft);
+  cursor: not-allowed;
+  border-color: var(--border);
+}

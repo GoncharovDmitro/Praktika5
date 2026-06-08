@@ -1,0 +1,173 @@
+/* ============================================================
+   Catalog Page
+   ============================================================ */
+
+.catalog-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+}
+.catalog-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.catalog-header p {
+  color: var(--text-muted);
+  margin: 0.35rem 0 1.1rem;
+}
+
+.catalog-search {
+  max-width: 560px;
+}
+.catalog-search-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.catalog-search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-ring);
+  background: var(--surface);
+}
+
+/* Layout */
+.catalog-wrapper {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0 4rem;
+  align-items: start;
+}
+
+/* Sidebar filters */
+.filters-sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  position: sticky;
+  top: 80px;
+  box-shadow: var(--shadow-sm);
+}
+.filter-section {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.filter-section:last-of-type {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.filter-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.filter-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.filter-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  font-size: 0.93rem;
+  padding: 0.35rem 0.4rem;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+.filter-section label:hover { background: var(--surface-2); }
+.filter-section input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.price-filter {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+.price-filter input {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.price-filter input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+.price-filter span { text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+.btn-clear {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-clear:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+/* Sorting bar */
+.sorting-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.results-count { color: var(--text-muted); font-size: 0.9rem; }
+.sort-select {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.sort-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+}
+.no-results h3 { color: var(--text); margin: 0.75rem 0 0.4rem; }
+
+@media (max-width: 960px) {
+  .catalog-wrapper { grid-template-columns: 1fr; }
+  .filters-sidebar { position: static; }
+}

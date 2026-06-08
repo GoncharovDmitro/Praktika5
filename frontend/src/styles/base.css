@@ -1,0 +1,152 @@
+/* ============================================================
+   TechStore — Design Tokens & Reset
+   ============================================================ */
+
+:root {
+  /* Палітра */
+  --bg:            #f6f7fb;
+  --surface:       #ffffff;
+  --surface-2:     #f3f4f8;
+  --border:        #e5e7eb;
+  --border-strong: #d1d5db;
+
+  --text:          #111827;
+  --text-muted:    #6b7280;
+  --text-soft:     #9ca3af;
+
+  /* Акцент */
+  --accent:        #2563eb;
+  --accent-hover:  #1d4ed8;
+  --accent-soft:   #eff6ff;
+  --accent-ring:   rgba(37, 99, 235, 0.15);
+
+  /* Статуси */
+  --success:       #10b981;
+  --success-soft:  #ecfdf5;
+  --danger:        #ef4444;
+  --danger-soft:   #fef2f2;
+  --warning:       #f59e0b;
+
+  /* Тіні */
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow:    0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 6px 16px -8px rgba(17, 24, 39, 0.10), 0 2px 6px rgba(17, 24, 39, 0.06);
+  --shadow-lg: 0 20px 40px -20px rgba(17, 24, 39, 0.18);
+
+  /* Радіуси */
+  --radius-sm: 8px;
+  --radius:    12px;
+  --radius-lg: 18px;
+
+  --content-w: 1200px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--accent-hover); }
+
+button { font: inherit; cursor: pointer; }
+
+.container {
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---- Секції ---- */
+.section { padding: 3.5rem 0; }
+
+.section-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.section-title h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.section-title p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* ---- Кнопки ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--accent-ring); }
+
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: var(--shadow-md); }
+
+.btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
+.btn-secondary:hover { background: var(--surface-2); border-color: var(--text-muted); }
+
+.btn-ghost { background: transparent; color: var(--text-muted); }
+.btn-ghost:hover { color: var(--text); background: var(--surface-2); }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+}
+.btn-link:hover { text-decoration: underline; }
+
+/* ---- Empty states ---- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+}
+.empty-state p { color: var(--text-muted); font-size: 1rem; }
+.empty-state .btn { align-self: center; }
+
+.empty-icon { font-size: 3rem; margin-bottom: 0.25rem; }
